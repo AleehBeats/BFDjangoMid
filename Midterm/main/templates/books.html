@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+    <title>Books</title>
+</head>
+<body>
+<div class="content">
+    <header>
+        Journals
+    </header>
+    <table>
+        <thead>
+        <tr>
+            <th>name</th>
+            <th>price</th>
+            <th>description</th>
+            <th>created_at</th>
+            <th>num_pages</th>
+            <th>genre</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+            <tr>
+                <td>{{ book.name }}</td>
+                <td>{{ book.price }}</td>
+                <td>{{ book.description }}</td>
+                <td>{{ book.created_at }}</td>
+                <td>{{ book.num_pages }}</td>
+                <td>{{ book.genre }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>

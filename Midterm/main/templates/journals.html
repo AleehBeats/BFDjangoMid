@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+    <title>Journals</title>
+</head>
+<body>
+<div class="content">
+    <header>
+        Journals
+    </header>
+    <table>
+        <thead>
+        <tr>
+            <th>name</th>
+            <th>price</th>
+            <th>description</th>
+            <th>created_at</th>
+            <th>type</th>
+            <th>publisher</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for journal in journals %}
+            <tr>
+                <td>{{ journal.name }}</td>
+                <td>{{ journal.price }}</td>
+                <td>{{ journal.description }}</td>
+                <td>{{ journal.created_at }}</td>
+                <td>{{ journal.type }}</td>
+                <td>{{ journal.publisher }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>
